@@ -21,20 +21,6 @@ RUN curl --location https://raw.github.com/creationix/nvm/master/install.sh | sh
 # Set PATH
 ENV PATH $HOME/.nvm/bin:$PATH
 
-# Global install most famous node.js libraries
-RUN set -xe; for package in \
-      browserify \
-      coffee-script \
-      express \
-      forever \
-      grunt \
-      grunt-cli \
-      gulp \
-      npm \
-      pm2 \
-    ; do npm install -g $package; done
-
-
 ## Create symbolic link to /usr/bin/node
 #RUN ln -s /usr/bin/nodejs /usr/bin/node
 
